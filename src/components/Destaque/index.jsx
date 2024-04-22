@@ -25,6 +25,7 @@ const Destaque = () => {
               <img src={nota} alt="avaliação" />
             </span>
             <ContainerTag>
+              <span>Destaque da Semana</span>
               <span>Japonesa</span>
             </ContainerTag>
           </CardTitle>

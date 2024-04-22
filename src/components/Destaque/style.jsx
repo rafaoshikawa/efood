@@ -49,6 +49,8 @@ export const ContainerTag = styled.div`
   top: 15px;
   right: 10px;
   color: #ffebd9;
+  display: flex;
+  gap: 20px;
 
   span {
     padding: 4px 6px;

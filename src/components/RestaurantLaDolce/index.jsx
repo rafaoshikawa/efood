@@ -1,17 +1,17 @@
 import React from "react";
-import LaDolceVita from "../LaDolceVita";
+import LaDolceVitaAbout from "../LaDolceVitaAbout";
 import { Container } from "../RestaurantLaDolce/style";
 
 const RestaurantLaDolce = () => {
   return (
     <div className="container">
       <Container>
-        <LaDolceVita />
-        <LaDolceVita />
-        <LaDolceVita />
-        <LaDolceVita />
-        <LaDolceVita />
-        <LaDolceVita />
+        <LaDolceVitaAbout />
+        <LaDolceVitaAbout />
+        <LaDolceVitaAbout />
+        <LaDolceVitaAbout />
+        <LaDolceVitaAbout />
+        <LaDolceVitaAbout />
       </Container>
     </div>
   );

@@ -1,32 +1,33 @@
-// LaDolceVita.jsx
+// HiokiSushi.jsx
 import React from "react";
 import { Card, CardTitle, Description, Border, Button, ContainerTag } from "./style";
-import macarrao from "../../assets/images/macarrao.png";
+import sushi from "../../assets/images/sushi.png";
 import nota from "../../assets/images/nota.svg";
 import { Link } from "react-router-dom";
 
-const LaDolceVita = () => {
+const Destaque = () => {
   return (
     <div className="container">
       <Card>
-        <img src={macarrao} alt="Macarrão" />
+        <img src={sushi} alt="sushi" />
         <Border>
           <CardTitle>
-            <h3>La Dolce Vita Trattoria</h3>
+            <h3>Hioki Sushi </h3>
             <span>
               <img src={nota} alt="avaliação" />
             </span>
             <ContainerTag>
-              <span>Italiana</span>
+              <span>Destaque da Semana</span>
+              <span>Japonesa</span>
             </ContainerTag>
           </CardTitle>
           <Description>
-            A La Dolce Vita Trattoria leva a autêntica cozinha italiana até
-            você! Desfrute de massas caseiras, pizzas deliciosas e risotos
-            incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem
-            embalados e sabor inesquecível. Peça já!
+            Peça já o melhor da culinária japonesa no conforto da sua casa!
+            Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis.
+            Entrega rápida, embalagens cuidadosas e qualidade
+            garantida.Experimente o Japão sem sair do lar com nosso delivery!
           </Description>
-          <Link to="/LaDolceVita">
+          <Link to="/HiokiSushi">
             <Button>Saiba Mais</Button>
           </Link>
         </Border>
@@ -35,4 +36,4 @@ const LaDolceVita = () => {
   );
 };
 
-export default LaDolceVita;
+export default Destaque;

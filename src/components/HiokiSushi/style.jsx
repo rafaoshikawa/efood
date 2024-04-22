@@ -1,15 +1,10 @@
 import styled from "styled-components";
 
-export const Grid = styled.div`
-  margin-top: 80px;
-  margin-bottom: 80px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-`;
+
 export const Card = styled.div`
   width: 472px;
   background-color: #ffffff;
+  position: relative;
 
   img {
     display: block;
@@ -49,3 +44,17 @@ export const Button = styled.a`
     background-color: #e6676797;
   }
 `;
+
+export const ContainerTag = styled.div`
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  color: #ffebd9;
+  display: flex;
+  gap: 20px;
+
+  span{
+    padding: 4px 6px;
+    background-color: #e66767;
+  }
+`

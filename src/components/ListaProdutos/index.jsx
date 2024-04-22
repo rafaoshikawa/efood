@@ -1,3 +1,4 @@
+import Destaque from "../Destaque";
 import HiokiSushi from "../HiokiSushi";
 import LaDolceVita from "../LaDolceVita";
 
@@ -6,7 +7,7 @@ const ListaProdutos = () => {
   return (
     <div className="container">
       <Grid>
-        <HiokiSushi />
+        <Destaque />
         <LaDolceVita />
         <HiokiSushi />
         <LaDolceVita />

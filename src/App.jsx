@@ -1,4 +1,3 @@
-
 import React from "react";
 import { GlobalCss } from "./style";
 import { Routes, Route } from "react-router-dom";
@@ -22,7 +21,6 @@ function App() {
             <>
               <Header />
               <ListaProdutos />
-              <Footer />
             </>
           }
         />
@@ -35,7 +33,6 @@ function App() {
               <HeaderDetalhe />
               <Italiana />
               <RestaurantLaDolce />
-              <Footer />
             </>
           }
         />
@@ -46,11 +43,11 @@ function App() {
               <HeaderDetalhe />
               <Japonesa />
               <RestaurantHioki />
-              <Footer />
             </>
           }
         />
       </Routes>
+      <Footer />
     </>
   );
 }

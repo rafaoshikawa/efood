@@ -1,20 +1,20 @@
 import React from "react";
-import HiokiSushi from "../HiokiSushi";
-import { Container } from "../RestaurantLaDolce/style";
+import HiokiSushiAbout from "../HiokiSushiAbout";
+import { Container } from "./style";
 
-const RestaurantLaDolce = () => {
+const RestaurantHioki = () => {
   return (
     <div className="container">
       <Container>
-        <HiokiSushi />
-        <HiokiSushi />
-        <HiokiSushi />
-        <HiokiSushi />
-        <HiokiSushi />
-        <HiokiSushi />
+        <HiokiSushiAbout />
+        <HiokiSushiAbout />
+        <HiokiSushiAbout />
+        <HiokiSushiAbout />
+        <HiokiSushiAbout />
+        <HiokiSushiAbout />
       </Container>
     </div>
   );
 };
 
-export default RestaurantLaDolce;
+export default RestaurantHioki;

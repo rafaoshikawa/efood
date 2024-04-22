@@ -1,11 +1,10 @@
-import { createGlobalStyle } from "styled-components";
-
-const cores = {
-  bg: "#fff8f2",
-  fontColor: "#E66767",
-  cardColor: "#FFFFFF",
-  footer: "¨#FFEBD9",
-};
+  import { createGlobalStyle } from "styled-components";
+  export const cores = {
+    bg: "#fff8f2",
+    fontColor: "#E66767",
+    cardColor: "#FFFFFF",
+    footer: "¨#FFEBD9",
+  };
 
 export const GlobalCss = createGlobalStyle`
   *{
@@ -26,5 +25,3 @@ export const GlobalCss = createGlobalStyle`
     margin: 0 auto;
   }
 `;
-
-

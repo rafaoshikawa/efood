@@ -1,6 +1,13 @@
 // HiokiSushi.jsx
 import React from "react";
-import { Card, CardTitle, Description, Border, Button } from "./style";
+import {
+  Card,
+  CardTitle,
+  Description,
+  Border,
+  Button,
+  ContainerTag
+} from "./style";
 import sushi from "../../assets/images/sushi.png";
 import nota from "../../assets/images/nota.svg";
 import { Link } from "react-router-dom";
@@ -16,6 +23,9 @@ const HiokiSushi = () => {
             <span>
               <img src={nota} alt="avaliação" />
             </span>
+            <ContainerTag>
+              <span>Japonesa</span>
+            </ContainerTag>
           </CardTitle>
           <Description>
             Peça já o melhor da culinária japonesa no conforto da sua casa!

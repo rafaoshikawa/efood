@@ -1,4 +1,4 @@
-import fundo from "../../assets/images/restaurantladolce.png";
+import fundo from "../../assets/images/restauranthioki.png";
 
 import { Imagem, FontTitle, FontSubTittle, Container } from "./style";
 function Italiana() {
@@ -7,7 +7,7 @@ function Italiana() {
       <div className="container">
         <Container>
           <FontTitle>Italiana</FontTitle>
-          <FontSubTittle>La Dolce Vitta Trattoria</FontSubTittle>
+          <FontSubTittle>La Dolce Vita Trattoria</FontSubTittle>
         </Container>
       </div>
     </Imagem>

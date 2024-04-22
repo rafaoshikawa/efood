@@ -16,6 +16,15 @@ export const Imagem = styled.div`
     img {
       margin-left: 88px;
     }
+    @media (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      img {
+        margin-left: 0;
+      }
+    }
   }
 `;
 

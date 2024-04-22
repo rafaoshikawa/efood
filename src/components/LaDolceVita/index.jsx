@@ -1,6 +1,6 @@
 // LaDolceVita.jsx
 import React from "react";
-import { Card, CardTitle, Description, Border, Button, ContainerTag } from "./style";
+import { Card, CardTitle, Description, Border, Button, ContainerTag, Prato } from "./style";
 import macarrao from "../../assets/images/macarrao.png";
 import nota from "../../assets/images/nota.svg";
 import { Link } from "react-router-dom";
@@ -9,7 +9,7 @@ const LaDolceVita = () => {
   return (
     <div className="container">
       <Card>
-        <img src={macarrao} alt="Macarrão" />
+        <Prato src={macarrao} alt="Macarrão" />
         <Border>
           <CardTitle>
             <h3>La Dolce Vita Trattoria</h3>

@@ -5,14 +5,34 @@ export const Card = styled.div`
   background-color: #ffffff;
   position: relative;
 
-  img {
-    display: block;
+  @media (max-width: 1024px) {
+    width: 400px;
+  }
+  @media (max-width: 550px) {
+    width: 300px;
   }
 `;
+export const Prato = styled.img`
+  display: block;
+  width: 100%;
+  @media (max-width: 1024px) {
+    width: 400px;
+  }
+  @media (max-width: 550px) {
+    width: 300px;
+    height: 150px;
+  }
+`;
+
 export const Border = styled.div`
+  height: 241px;
   border-left: 3px solid #e66767;
   border-bottom: 3px solid #e66767;
   border-right: 3px solid #e66767;
+  @media (max-width: 550px) {
+    height: 280px;
+
+  }
 `;
 export const CardTitle = styled.div`
   padding: 16px 8px 0px 8px;

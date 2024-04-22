@@ -1,7 +1,7 @@
 import fundo from "../../assets/images/restauranthioki.png";
 
 import { Imagem, FontTitle, FontSubTittle, Container } from "./style";
-function Italiana() {
+function Japonesa() {
   return (
     <Imagem style={{ backgroundImage: `url(${fundo})` }}>
       <div className="container">
@@ -14,4 +14,4 @@ function Italiana() {
   );
 }
 
-export default Italiana;
+export default Japonesa;

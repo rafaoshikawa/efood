@@ -1,10 +1,10 @@
-  import { createGlobalStyle } from "styled-components";
-  export const cores = {
-    bg: "#fff8f2",
-    fontColor: "#E66767",
-    cardColor: "#FFFFFF",
-    footer: "¨#FFEBD9",
-  };
+import { createGlobalStyle } from "styled-components";
+export const cores = {
+  bg: "#fff8f2",
+  fontColor: "#E66767",
+  cardColor: "#FFFFFF",
+  footer: "¨#FFEBD9",
+};
 
 export const GlobalCss = createGlobalStyle`
   *{
@@ -21,7 +21,10 @@ export const GlobalCss = createGlobalStyle`
 
   .container{
     max-width: 1024px;
-    width: 100%;
     margin: 0 auto;
+
+    @media (max-width: 1024px){
+      max-width: 95%;
+    }
   }
 `;

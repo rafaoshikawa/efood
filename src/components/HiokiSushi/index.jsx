@@ -6,7 +6,8 @@ import {
   Description,
   Border,
   Button,
-  ContainerTag
+  ContainerTag,
+  Prato,
 } from "./style";
 import sushi from "../../assets/images/sushi.png";
 import nota from "../../assets/images/nota.svg";
@@ -16,7 +17,7 @@ const HiokiSushi = () => {
   return (
     <div className="container">
       <Card>
-        <img src={sushi} alt="sushi" />
+        <Prato src={sushi} alt="sushi" />
         <Border>
           <CardTitle>
             <h3>Hioki Sushi </h3>

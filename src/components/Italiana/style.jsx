@@ -17,7 +17,7 @@ export const FontTitle = styled.p`
 `;
 export const FontSubTittle = styled.p`
   color: #ffffff;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 900;
 `;
 

@@ -1,6 +1,14 @@
-// HiokiSushi.jsx
+// Destaque.jsx
 import React from "react";
-import { Card, CardTitle, Description, Border, Button, ContainerTag } from "./style";
+import {
+  Card,
+  CardTitle,
+  Description,
+  Border,
+  Button,
+  ContainerTag,
+  Prato,
+} from "./style";
 import sushi from "../../assets/images/sushi.png";
 import nota from "../../assets/images/nota.svg";
 import { Link } from "react-router-dom";
@@ -9,7 +17,7 @@ const Destaque = () => {
   return (
     <div className="container">
       <Card>
-        <img src={sushi} alt="sushi" />
+        <Prato src={sushi} alt="sushi" />
         <Border>
           <CardTitle>
             <h3>Hioki Sushi </h3>
@@ -17,7 +25,6 @@ const Destaque = () => {
               <img src={nota} alt="avaliação" />
             </span>
             <ContainerTag>
-              <span>Destaque da Semana</span>
               <span>Japonesa</span>
             </ContainerTag>
           </CardTitle>

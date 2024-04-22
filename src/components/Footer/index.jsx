@@ -8,7 +8,7 @@ import { Container, SocialMedias, FontText } from "./style";
 function Footer() {
   return (
     <Container>
-      <img src={logo} alt="logo" />
+      <a href="/"><img src={logo} alt="logo" /></a>
       <SocialMedias>
         <a href="">
           <img src={instagram} alt="instagram" />

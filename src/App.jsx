@@ -25,7 +25,6 @@ function App() {
           }
         />
         <Route path="/RestaurantHioki" element={<RestaurantHioki />} />
-        <Route path="/RestaurantLaDolce" element={<RestaurantLaDolce />} />
         <Route
           path="/LaDolceVita"
           element={
@@ -36,6 +35,7 @@ function App() {
             </>
           }
         />
+        <Route path="/RestaurantLaDolce" element={<RestaurantLaDolce />} />
         <Route
           path="/HiokiSushi"
           element={

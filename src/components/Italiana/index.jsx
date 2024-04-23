@@ -1,4 +1,4 @@
-import fundo from "../../assets/images/restauranthioki.png";
+import fundo from "../../assets/images/restaurantladolce.png";
 
 import { Imagem, FontTitle, FontSubTittle, Container } from "./style";
 function Italiana() {

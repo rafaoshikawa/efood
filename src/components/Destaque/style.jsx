@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Card = styled.div`
   width: 472px;
+  height: 398px;
   background-color: #ffffff;
   position: relative;
 
@@ -15,6 +16,7 @@ export const Card = styled.div`
 export const Prato = styled.img`
   display: block;
   width: 100%;
+  height: 217px;
   @media (max-width: 1024px) {
     width: 400px;
   }
@@ -25,17 +27,16 @@ export const Prato = styled.img`
 `;
 
 export const Border = styled.div`
-  height: 241px;
+  height: 181px;
   border-left: 3px solid #e66767;
   border-bottom: 3px solid #e66767;
   border-right: 3px solid #e66767;
   @media (max-width: 550px) {
     height: 280px;
-
   }
 `;
 export const CardTitle = styled.div`
-  padding: 16px 8px 0px 8px;
+  padding: 8px 8px 0px 8px;
   display: flex;
   justify-content: space-between;
   color: #e66767;
@@ -49,13 +50,16 @@ export const Description = styled.p`
   color: #e66767;
 `;
 export const Button = styled.a`
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 50px;
+  display: block;
+  width: 82px;
+  height: 24px;
   color: #ffebd9;
   font-weight: 700;
+  font-size: 14px;
+  padding-top: 4px;
+  text-align: center;
   background-color: #e66767;
-  margin: 16px 8px;
+  margin: 10px 8px;
   border: none;
   cursor: pointer;
 

@@ -2,16 +2,16 @@ import logo from "../../assets/images/logo.png";
 import fundo from "../../assets/images/fundo.png";
 
 import { Imagem, FontTitle } from "./style";
-function HeaderDetalhe() {
+function HeaderCart() {
   return (
     <Imagem style={{ backgroundImage: `url(${fundo})` }}>
       <div className="container">
-        <FontTitle>Restaurantes</FontTitle>
+        <FontTitle href="/">Restaurantes</FontTitle>
         <a href="/"><img src={logo} alt="logo" /></a>
-        <FontTitle>0 produto(s) no carrinho</FontTitle>
+       <a href=""><FontTitle>0 produto(s) no carrinho</FontTitle></a>
       </div>
     </Imagem>
   );
 }
 
-export default HeaderDetalhe;
+export default HeaderCart;

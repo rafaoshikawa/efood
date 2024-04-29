@@ -14,6 +14,7 @@ export const GlobalCss = createGlobalStyle`
     font-family: Roboto, sans-serife;
     text-decoration: none;
     list-style: none;
+    overflow-x: hidden;
   }
   body{
     background-color: ${cores.bg};

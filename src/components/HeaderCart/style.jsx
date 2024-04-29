@@ -28,8 +28,9 @@ export const Imagem = styled.div`
   }
 `;
 
-export const FontTitle = styled.p`
+export const FontTitle = styled.a`
   color: #e66767;
   font-size: 18px;
   font-weight: 900;
+ cursor: pointer;
 `;

@@ -1,14 +1,12 @@
 import React from "react";
 import { GlobalCss } from "./style";
 import { Routes, Route } from "react-router-dom";
-import ListaProdutos from "./components/ListaProdutos";
-import RestaurantHioki from "./components/RestaurantHioki";
-import RestaurantLaDolce from "./components/RestaurantLaDolce";
+
 import Header from "./components/Header";
-import HeaderDetalhe from "./components/HeaderDetalhe";
+import HeaderCart from "./components/HeaderCart";
+import Restaurantes from "./components/Restaurantes";
+import PratosRestaurantes from "./components/PratosRestaurantes";
 import Footer from "./components/Footer";
-import Italiana from "./components/Italiana";
-import Japonesa from "./components/Japonesa";
 
 function App() {
   return (
@@ -20,29 +18,16 @@ function App() {
           element={
             <>
               <Header />
-              <ListaProdutos />
+              <Restaurantes />
             </>
           }
         />
-        <Route path="/RestaurantHioki" element={<RestaurantHioki />} />
         <Route
-          path="/LaDolceVita"
+          path="/restaurantes/:id"
           element={
             <>
-              <HeaderDetalhe />
-              <Italiana />
-              <RestaurantLaDolce />
-            </>
-          }
-        />
-        <Route path="/RestaurantLaDolce" element={<RestaurantLaDolce />} />
-        <Route
-          path="/HiokiSushi"
-          element={
-            <>
-              <HeaderDetalhe />
-              <Japonesa />
-              <RestaurantHioki />
+              <HeaderCart />
+              <PratosRestaurantes />
             </>
           }
         />

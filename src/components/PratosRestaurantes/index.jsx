@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import HeaderRestaurante from "../HeaderRestaurante"; // Importe o componente HeaderRestaurante
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Actions/cartActions";
+import HeaderRestaurante from "../HeaderRestaurante";
 import {
   Card,
   CardTitle,
@@ -20,8 +22,9 @@ import close from "../../assets/images/close.svg";
 const PratosRestaurantes = () => {
   const { id } = useParams();
   const [restaurante, setRestaurante] = useState(null);
-  const [pratoSelecionado, setPratoSelecionado] = useState(null); // Estado para rastrear o prato selecionado
-  const [showModal, setShowModal] = useState(false); // Estado para controlar a exibição do modal
+  const [pratoSelecionado, setPratoSelecionado] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchRestauranteById = async () => {
@@ -39,13 +42,18 @@ const PratosRestaurantes = () => {
     fetchRestauranteById();
   }, [id]);
 
-  const handleAddToCart = (prato) => {
-    setPratoSelecionado(prato); // Definir o prato selecionado ao clicar em "Adicionar ao Carrinho"
-    setShowModal(true); // Abrir o modal
+  const openModal = (prato) => {
+    setPratoSelecionado(prato);
+    setShowModal(true);
+  };
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(pratoSelecionado));
+    setShowModal(false);
   };
 
   const closeModal = () => {
-    setShowModal(false); // Fechar o modal
+    setShowModal(false);
   };
 
   if (!restaurante) {
@@ -67,9 +75,7 @@ const PratosRestaurantes = () => {
               <Border>
                 <CardTitle>{prato.nome}</CardTitle>
                 <Description>{prato.descricao}</Description>
-                <Button onClick={() => handleAddToCart(prato)}>
-                  Adicionar ao Carrinho
-                </Button>
+                <Button onClick={() => openModal(prato)}>Ver Detalhes</Button>
               </Border>
             </Card>
           ))}
@@ -86,7 +92,7 @@ const PratosRestaurantes = () => {
               <ModalTitle>{pratoSelecionado.nome}</ModalTitle>
               <p>{pratoSelecionado.descricao}</p>
               <p>Serve de {pratoSelecionado.porcao}</p>
-              <ButtonModal>
+              <ButtonModal onClick={handleAddToCart}>
                 Adicionar ao Carrinho - R$ {pratoSelecionado.preco}
               </ButtonModal>
             </div>

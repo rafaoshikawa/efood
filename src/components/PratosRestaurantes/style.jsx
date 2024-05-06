@@ -137,11 +137,12 @@ export const ModalTitle = styled.h3`
   font-weight: 900;
 `;
 export const ButtonModal = styled.a`
-  display: block;
+  display: flex;
   text-align: center;
-  width: 218px;
+  width: 240px;
   height: 24px;
-  padding-top: 3px;
+  align-items: center;
+  justify-content: center;
   color: #e66767;
   font-weight: 700;
   background-color: #ffebd9;
@@ -154,7 +155,6 @@ export const ButtonModal = styled.a`
   }
   @media (max-width: 1000px) {
     height: 100%;
-    padding-top: 10px;
     width: 100%;
     margin: 2px;
   }

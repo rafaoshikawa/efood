@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux"; // Importe o useDispatch para enviar a ação para o Redux
+import { useSelector, useDispatch } from "react-redux";
 import logo from "../../assets/images/logo.png";
 import trash from "../../assets/images/trash.svg";
 import fundo from "../../assets/images/fundo.png";
@@ -16,20 +16,30 @@ import {
   ItemImage,
   Delete,
 } from "./style";
-import { removeFromCart } from "../Actions/cartActions"; // Importe a ação para remover do carrinho
+import { removeFromCart } from "../Actions/cartActions";
+import Checkout from "../Checkout";
 
 function HeaderCart() {
   const [menuAberto, setMenuAberto] = useState(false);
-  const carrinho = useSelector((state) => state.cart.items); // Acessa o estado global do carrinho
-  const dispatch = useDispatch(); // Obtenha a função dispatch do Redux
+  const [showCheckout, setShowCheckout] = useState(false);
+  const carrinho = useSelector((state) => state.cart.items);
+  const dispatch = useDispatch();
+  const totalCartValue = carrinho.reduce((total, item) => total + item.preco, 0);
 
   const toggleMenu = () => {
     setMenuAberto(!menuAberto);
   };
 
-  // Função para deletar um item do carrinho
   const handleDeleteItem = (index) => {
-    dispatch(removeFromCart(index)); // Dispara a ação para remover o item do carrinho
+    dispatch(removeFromCart(index));
+  };
+
+  const handleContinueToCheckout = () => {
+    setShowCheckout(true);
+  };
+
+  const handleBackToCart = () => {
+    setShowCheckout(false);
   };
 
   return (
@@ -56,7 +66,6 @@ function HeaderCart() {
                   <p>{item.nome}</p>
                   <span>R$ {item.preco}</span>
                 </ItemInfo>
-                {/* Adicione o evento onClick para deletar o item */}
                 <Delete
                   src={trash}
                   alt="Delete"
@@ -67,16 +76,14 @@ function HeaderCart() {
           </ListaMenu>
           <ContainerPrice>
             <p>Valor Total</p>
-            <p>
-              R${" "}
-              {carrinho
-                .reduce((total, item) => total + item.preco, 0)
-                .toFixed(2)}
-            </p>
+            <p>R${totalCartValue.toFixed(2)}</p>
           </ContainerPrice>
-          <Button>Continuar com a entrega</Button>
+          <Button onClick={handleContinueToCheckout}>
+            Continuar com a entrega
+          </Button>{" "}
         </MenuLateral>
       )}
+      {showCheckout && <Checkout totalCartValue={totalCartValue} onBackToCart={handleBackToCart} />}
     </>
   );
 }

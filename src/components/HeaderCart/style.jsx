@@ -122,7 +122,7 @@ export const Button = styled.a`
 
   @media (max-width:550px){
     width: 100%;
-   
+
   }
 `;
 

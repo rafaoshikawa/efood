@@ -1,7 +1,7 @@
-// Checkout.js
 import React, { useState } from "react";
 import { MenuLateral, Button, ListaMenu, Cep, ContainerButton } from "./style";
 import Payment from "../Payment";
+import InputMask from "react-input-mask";
 
 function Checkout({ totalCartValue, onBackToCart }) {
   const [deliveryData, setDeliveryData] = useState({
@@ -13,15 +13,23 @@ function Checkout({ totalCartValue, onBackToCart }) {
     complement: ""
   });
   const [showPayment, setShowPayment] = useState(false);
+  const [errors, setErrors] = useState({});
+
+  const validateFields = () => {
+    const newErrors = {};
+
+    if (!deliveryData.name) newErrors.name = "Quem irá receber é obrigatório.";
+    if (!deliveryData.address) newErrors.address = "Endereço é obrigatório.";
+    if (!deliveryData.city) newErrors.city = "Cidade é obrigatória.";
+    if (!deliveryData.zip || !/^\d{5}-\d{3}$/.test(deliveryData.zip)) newErrors.zip = "CEP inválido.";
+    if (!deliveryData.number) newErrors.number = "Número é obrigatório.";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleContinueToPayment = () => {
-    if (
-      deliveryData.name &&
-      deliveryData.address &&
-      deliveryData.city &&
-      deliveryData.zip &&
-      deliveryData.number
-    ) {
+    if (validateFields()) {
       setShowPayment(true);
     } else {
       alert("Por favor, preencha todos os campos obrigatórios.");
@@ -41,8 +49,10 @@ function Checkout({ totalCartValue, onBackToCart }) {
               onChange={(e) =>
                 setDeliveryData({ ...deliveryData, name: e.target.value })
               }
+              style={{ borderColor: errors.name ? "green" : "" }}
               required
             />
+            {errors.name && <span style={{ color: "green" }}>{errors.name}</span>}
             <label htmlFor="address">Endereço</label>
             <input
               type="text"
@@ -50,8 +60,10 @@ function Checkout({ totalCartValue, onBackToCart }) {
               onChange={(e) =>
                 setDeliveryData({ ...deliveryData, address: e.target.value })
               }
+              style={{ borderColor: errors.address ? "green" : "" }}
               required
             />
+            {errors.address && <span style={{ color: "green" }}>{errors.address}</span>}
             <label htmlFor="city">Cidade</label>
             <input
               type="text"
@@ -59,19 +71,23 @@ function Checkout({ totalCartValue, onBackToCart }) {
               onChange={(e) =>
                 setDeliveryData({ ...deliveryData, city: e.target.value })
               }
+              style={{ borderColor: errors.city ? "green" : "" }}
               required
             />
+            {errors.city && <span style={{ color: "green" }}>{errors.city}</span>}
             <Cep>
               <div>
                 <label htmlFor="zip">CEP</label>
-                <input
-                  type="text"
+                <InputMask
+                  mask="99999-999"
                   value={deliveryData.zip}
                   onChange={(e) =>
                     setDeliveryData({ ...deliveryData, zip: e.target.value })
                   }
+                  style={{ borderColor: errors.zip ? "green" : "" }}
                   required
                 />
+                {errors.zip && <span style={{ color: "green" }}>{errors.zip}</span>}
               </div>
               <div>
                 <label htmlFor="number">Número</label>
@@ -81,8 +97,10 @@ function Checkout({ totalCartValue, onBackToCart }) {
                   onChange={(e) =>
                     setDeliveryData({ ...deliveryData, number: e.target.value })
                   }
+                  style={{ borderColor: errors.number ? "green" : "" }}
                   required
                 />
+                {errors.number && <span style={{ color: "green" }}>{errors.number}</span>}
               </div>
             </Cep>
             <label htmlFor="complement">Complemento (opcional)</label>
